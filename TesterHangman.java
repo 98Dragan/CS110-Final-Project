@@ -5,7 +5,7 @@ import java.util.concurrent.ThreadLocalRandom;
 public class TesterHangman {
 	public static void main(String[] args) {
 		//Intro
-		System.out.println("Hello, It is your turn to test your wits, by tring to save the dear Hangmsn's life.");
+		System.out.println("Hello, It is your turn to test your wits, by tring to save the dear Hangman's life.");
 		System.out.println("You will have to input letters and guess word to save the hangman, if you guess wrong six times however,");
 		System.out.println("..............");
 		System.out.println("You will have the blood of the hangman on your hands...");

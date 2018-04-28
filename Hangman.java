@@ -47,30 +47,30 @@ public static void letsPlay(String word) {
 //This checks to see if the input letter already exists
 boolean alreadyUsed=characterChecker(letter,NoDuplicates);
 
-//This adds the letter they chose to the array of letters that exist		
+		//This adds the letter they chose to the array of letters that exist		
 		NoDuplicates.add(letter);
 		
-//If the letter didn't match any of the letters in the duplicate array, the code can continue
+		//If the letter didn't match any of the letters in the duplicate array, the code can continue
 		if (!alreadyUsed) {
 			
-//If the letter is a letter between a and z, the code can continue	
-		if (letter >='a' && letter<='z')  {
+			//If the letter is a letter between a and z, the code can continue	
+			if (letter >='a' && letter<='z')  {
 			
-//Correct corresponds to whether or not the letter is in the word, is default set to zero in case it never appears in the word
-			int correct=0;
-			
-//This Checks where if at all the input matches a letter in the word
-		
-			for (int i=0;i<word.length();i++) {	
-				if (word.charAt(i)==letter) {
-					currentLetters[i]=letter.toString();
-					correct=1;
-					correctCounter++;
-					}
+			//Correct corresponds to whether or not the letter is in the word, is default set to zero in case it never appears in the word
+					int correct=0;
+					
+			//This Checks where if at all the input matches a letter in the word
 				
-	}
+					for (int i=0;i<word.length();i++) {	
+						if (word.charAt(i)==letter) {
+							currentLetters[i]=letter.toString();
+							correct=1;
+							correctCounter++;
+							}
+						
+					}
 			
-//If the letter didn't match any letters in the word, error is incremented and the new hangman is drawn			
+		//If the letter didn't match any letters in the word, error is incremented and the new hangman is drawn			
 
 		if (correct==0) {
 			System.out.println("Im sorry user, that letter is not in the word");
@@ -78,19 +78,19 @@ boolean alreadyUsed=characterChecker(letter,NoDuplicates);
 			Draw(error,dashes,currentLetters);
 		}
 		
-//If the letter did match letters in the word, error is not incremented
+		//If the letter did match letters in the word, error is not incremented
 		
 		else if (correct==1) {
 			System.out.println("Congrats user, that letter was in your word");
 			Draw(error,dashes,currentLetters);
 		}
 		
-//This is if the user lost the game
-			if (error == 6) {
-				System.out.println("You have lost, the correct word was " + word);
-			}
+		//This is if the user lost the game
+		if (error == 6) {
+			System.out.println("You have lost and now will forever regret the fact that the blood \nof the hangman is now on your hands, \nthe correct word was " + word + ". \n");
+		}
 		
-//This is if the user won the game
+			//This is if the user won the game
 			if (correctCounter==word.length()) {
 				System.out.println("Congrats User, you have won");
 				error=6;
